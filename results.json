@@ -1,0 +1,152 @@
+{
+  "metadata": {
+    "system": "AI Ticket Classification & Response System",
+    "version": "1.0.0",
+    "timestamp": "2026-03-30T16:38:03.371116",
+    "total_tickets": 3,
+    "total_clusters": 2,
+    "pipeline": [
+      "Text Preprocessing",
+      "TF-IDF Feature Extraction",
+      "Cosine Similarity Analysis",
+      "Agglomerative Clustering",
+      "Intent Classification",
+      "Auto-Response Generation"
+    ]
+  },
+  "tickets": [
+    {
+      "id": "T-001",
+      "original_text": "I forgot my password, how to reset it?",
+      "preprocessed": "forgot password reset",
+      "cluster_id": 0,
+      "classification": {
+        "category": "Password & Authentication",
+        "confidence": 0.99,
+        "matched_keywords": [
+          "password",
+          "reset",
+          "forgot"
+        ],
+        "priority": "HIGH",
+        "department": "IT Security",
+        "sla_hours": 1
+      },
+      "auto_response": "To reset your password:\n  1. Visit the Login page → Click 'Forgot Password'\n  2. Enter your registered email address\n  3. Check your inbox for the reset link (also check spam)\n  4. Click the link and create a new strong password\n  5. Log in with your new credentials\n\n  Need more help? Contact IT Security: security@company.com"
+    },
+    {
+      "id": "T-002",
+      "original_text": "I can't log in, as password is incorrect.",
+      "preprocessed": "cant log password incorrect",
+      "cluster_id": 0,
+      "classification": {
+        "category": "Password & Authentication",
+        "confidence": 0.99,
+        "matched_keywords": [
+          "password",
+          "log in",
+          "incorrect"
+        ],
+        "priority": "HIGH",
+        "department": "IT Security",
+        "sla_hours": 1
+      },
+      "auto_response": "Trouble logging in? Try these steps:\n  1. Ensure Caps Lock is turned OFF\n  2. Verify you're using the correct username/email\n  3. Clear your browser cache and cookies\n  4. Try the 'Forgot Password' option to reset\n\n  After 5 failed attempts, accounts are auto-locked.\n  Contact IT Security for immediate unlock: security@company.com"
+    },
+    {
+      "id": "T-003",
+      "original_text": "How to see leave balance?",
+      "preprocessed": "see leave balance",
+      "cluster_id": 1,
+      "classification": {
+        "category": "Leave & HR Management",
+        "confidence": 0.91,
+        "matched_keywords": [
+          "leave",
+          "balance"
+        ],
+        "priority": "MEDIUM",
+        "department": "Human Resources",
+        "sla_hours": 4
+      },
+      "auto_response": "To check your leave balance:\n  1. Log in to HR Portal → hr.company.com\n  2. Navigate to 'My Dashboard' → 'Leave Management'\n  3. Click 'Leave Balance' for detailed breakdown\n\n  Mobile: HR App → 'My Leaves' → 'Balance Summary'\n  Need help? HR Helpdesk: hr@company.com"
+    }
+  ],
+  "similarity_matrix": [
+    [
+      1.0000000000000002,
+      0.10539279301859408,
+      0.0
+    ],
+    [
+      0.10539279301859408,
+      1.0000000000000002,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0000000000000002
+    ]
+  ],
+  "groups": {
+    "Password & Authentication": [
+      "T-001",
+      "T-002"
+    ],
+    "Leave & HR Management": [
+      "T-003"
+    ]
+  },
+  "scalability_test": [
+    {
+      "id": "T-004",
+      "text": "My account is locked after multiple failed attempts",
+      "category": "Password & Authentication",
+      "confidence": 0.99,
+      "response_preview": "Your account appears to be locked. This happens after\nmultiple failed login attempts for security re..."
+    },
+    {
+      "id": "T-005",
+      "text": "How many sick leaves do I have remaining this quarter?",
+      "category": "Leave & HR Management",
+      "confidence": 0.99,
+      "response_preview": "To check remaining sick leaves:\n  1. HR Portal → Leave Management → Leave Balance\n  2. Look under 'S..."
+    },
+    {
+      "id": "T-006",
+      "text": "I need to change my password immediately",
+      "category": "Password & Authentication",
+      "confidence": 0.83,
+      "response_preview": "To change your password:\n  1. Log in → Go to Settings → Security\n  2. Click 'Change Password'\n  3. E..."
+    },
+    {
+      "id": "T-007",
+      "text": "Where can I apply for vacation leave?",
+      "category": "Leave & HR Management",
+      "confidence": 0.99,
+      "response_preview": "To apply for leave:\n  1. HR Portal → Leave Management → Apply Leave\n  2. Select leave type (Sick/Cas..."
+    },
+    {
+      "id": "T-008",
+      "text": "Login page shows error 403 forbidden",
+      "category": "Password & Authentication",
+      "confidence": 0.99,
+      "response_preview": "We detected an authentication-related issue.\n  1. Try resetting your password via 'Forgot Password'\n..."
+    },
+    {
+      "id": "T-009",
+      "text": "How to download my salary slip from the portal?",
+      "category": "Leave & HR Management",
+      "confidence": 0.99,
+      "response_preview": "To download your salary slip:\n  1. HR Portal → Payroll → My Payslips\n  2. Select the month/year\n  3...."
+    },
+    {
+      "id": "T-010",
+      "text": "Two-factor authentication is not working on my phone",
+      "category": "Password & Authentication",
+      "confidence": 0.93,
+      "response_preview": "For two-factor authentication issues:\n  1. Ensure your phone's time is synced correctly\n  2. Try usi..."
+    }
+  ]
+}
